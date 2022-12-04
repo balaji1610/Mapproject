@@ -1,13 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Mapimage from "../Imges/building.jpg";
+import Abuilding from "../Imges/Abuilding.jpg";
+import Bbuilding from "../Imges/Bbuild.jpg";
+import Cbuilding from "../Imges/cbuild.jpg";
+import Dbuilding from "../Imges/Dbuild.png";
+import Ebuilding from "../Imges/Eimage.jpg";
+/* eslint-disable */
 export default function index() {
+  const [dropdown, setDropdown] = useState({ Buildingvalue: "chooseBuilding" });
+
+  const handleAddtodo = (e) => {
+    setDropdown(() => ({
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const [dynamicImage, setDynamicImage] = useState(Mapimage);
+
+  let Imageobject = {
+    Image: "",
+  };
+
+  const getImage = (e) => {
+    useEffect(() => {
+      console.log(e, "Dropdown");
+      if (e == "buildA") {
+        return setDynamicImage(Abuilding);
+      } else if (e == "buildB") {
+        return setDynamicImage(Bbuilding);
+      } else if (e == "buildC") {
+        return setDynamicImage(Cbuilding);
+      } else if (e == "buildD") {
+        return setDynamicImage(Dbuilding);
+      } else if (e == "buildE") {
+        return setDynamicImage(Ebuilding);
+      } else if (e == "chooseBuilding") {
+        return setDynamicImage(Mapimage);
+      }
+    });
+  };
   return (
     <div
       style={{
         width: "100%",
         height: "100vh",
         objectFit: "cover",
-        backgroundImage: `url(${Mapimage})`,
+        backgroundImage: `url(${dynamicImage})`,
       }}
     >
       {/* Bgimage */}
@@ -114,15 +152,30 @@ export default function index() {
             </div>
             <div>
               <div className="Dropdown_bg">
-                <select style={{ width: "170px", height: "40px" }}>
-                  <option style={{ fontSize: "150%" }} value="actual value 1">
-                    Display Text 1
+                <select
+                  style={{ width: "170px", height: "40px", cursor: "pointer" }}
+                  name="Buildingvalue"
+                  value={dropdown.Buildingvalue}
+                  onChange={handleAddtodo}
+                  onClick={getImage(dropdown.Buildingvalue)}
+                >
+                  <option style={{ fontSize: "150%" }} value="chooseBuilding">
+                    ChooseBuilding{" "}
                   </option>
-                  <option style={{ fontSize: "150%" }} value="actual value 2">
-                    Display Text 2
+                  <option style={{ fontSize: "150%" }} value="buildA">
+                    Building A{" "}
                   </option>
-                  <option style={{ fontSize: "150%" }} value="actual value 3">
-                    Display Text 3
+                  <option style={{ fontSize: "150%" }} value="buildB">
+                    Building B{" "}
+                  </option>
+                  <option style={{ fontSize: "150%" }} value="buildC">
+                    Building C
+                  </option>
+                  <option style={{ fontSize: "150%" }} value="buildD">
+                    Building D
+                  </option>
+                  <option style={{ fontSize: "150%" }} value="buildE">
+                    Building E
                   </option>
                 </select>
               </div>
