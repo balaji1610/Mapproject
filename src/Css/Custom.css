@@ -1,3 +1,75 @@
-.indexC_color {
-  color: blue;
+.Container_01 {
+  display: flex;
+  flex-direction: column;
+}
+
+.Layout_Container_01 {
+  background-color: #f1f1f1;
+  width: 50px;
+  margin: 10px;
+  text-align: center;
+  border: 2px solid black;
+  font-size: 30px;
+}
+.Layout_Container {
+  background-color: #f1f1f1;
+  width: 100px;
+  margin: 10px;
+  text-align: center;
+
+  font-size: 30px;
+}
+
+.Parent_Layout {
+  display: flex;
+  flex-direction: row;
+}
+
+.Container_02 {
+  display: flex;
+  flex-direction: row;
+}
+.icon_Building {
+  border: 2px solid black;
+  background-color: #f1f1f1;
+  width: 50px;
+  margin-top: 20px;
+  margin-left: 13px;
+}
+
+.Container_02 {
+  display: flex;
+  flex-direction: column;
+  margin-top: 35px;
+}
+
+.Container_03 {
+  display: flex;
+  flex-direction: row;
+}
+.Multibutton {
+  background-color: #f1f1f1;
+  width: 50px;
+  margin: 10px;
+  text-align: center;
+  border: 2px solid black;
+  font-size: 30px;
+  height: 50px;
+}
+
+.Multibutton_messageIcon {
+  background-color: #448aff;
+
+  width: 50px;
+  margin: 10px;
+  text-align: center;
+  border: 1px solid black;
+  font-size: 30px;
+  height: 48px;
+}
+
+.Dropdown_bg {
+  background-color: #ffffff;
+  opacity: 2;
+  padding: 40px;
 }
