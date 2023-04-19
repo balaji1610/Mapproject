@@ -23,7 +23,8 @@ export default function index() {
   const getImage = (e) => {
     useEffect(() => {
       console.log(e, "Dropdown");
-      if (e == "buildA") {
+
+      /*   if (e == "buildA") {
         return setDynamicImage(Abuilding);
       } else if (e == "buildB") {
         return setDynamicImage(Bbuilding);
@@ -35,7 +36,18 @@ export default function index() {
         return setDynamicImage(Ebuilding);
       } else if (e == "chooseBuilding") {
         return setDynamicImage(Mapimage);
-      }
+      } */
+      const objectOperation = {
+        buildA: () => setDynamicImage(Abuilding),
+        buildB: () => setDynamicImage(Bbuilding),
+        buildC: () => setDynamicImage(Cbuilding),
+        buildD: () => setDynamicImage(Dbuilding),
+        buildE: () => setDynamicImage(Ebuilding),
+        chooseBuilding: () => setDynamicImage(Mapimage),
+      };
+
+      // console.log(objectOperation[e], "op");
+      return objectOperation[e]();
     });
   };
   return (
